@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <title>👹 ANIMESTIAM</title>
+    <title>🦜 ToukAnime</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">👹 AnimEstiam</a>
+        <nav class="navbar navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"> 🦜 ToukAnime </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,16 +25,12 @@
                 <ul class="navbar-nav mr-auto"></ul>
 
                 <!-- Formulaire de recherche -->
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search anime 💬" data-toggle="dropdown" />
-                    <!-- Element dynamique -->
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Fate/Zero</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Fate/Zero Season 2</a>
-                    </div>
-                    <!-- /Element dynamique -->
-                </form>
-                <!-- /Formulaire de recherche -->
+                <div className="row">
+                    <form id="search_form" class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2 validate" type="search" name="search" id="search"
+                            placeholder="Search your anime " />
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
@@ -41,119 +38,25 @@
     <main class="mt-5">
         <div class="py-5 bg-light">
             <div class="container">
-                <h1>My favorite animes 👺</h1>
-
-                <!-- //////////////////////////////////////////////////////////// -->
-                <!-- ANIME LIST -->
-                <!-- //////////////////////////////////////////////////////////// -->
-                <div class="row">
-                    <!-- Element dynamique -->
-                    <div class="col-sm-6 col-md-4 col-xl-2">
-                        <div class="card mb-4 box-shadow">
-                            <div class="card-body">
-                                <img class="card-img" alt="Fate Zero" src="https://cdn.myanimelist.net/images/anime/2/73249.jpg">
-
-                                <p class="h6">
-                                    Fate/Zero
-                                    <span class="badge badge-info">8.6</span>
-                                </p>
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#modal-detail-anime">
-                                            Info
-                                        </button>
-                                    </div>
-
-                                    <small class="text-muted">13 Ep.</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Element dynamique -->
-
-                    <!-- //////////////////////////////////////////////////////////// -->
-                    <!-- A supprimer, ceci est pour l'exemple d'affichage de la liste en statique -->
-                    <!-- //////////////////////////////////////////////////////////// -->
-                
-                </div>
-                <!-- //////////////////////////////////////////////////////////// -->
-                <!-- /ANIME LIST -->
-                <!-- //////////////////////////////////////////////////////////// -->
+                <h1>&#x2728;My favorite animes &#x2728;</h1>
             </div>
+            <div id="search-results"></div>
         </div>
-
     </main>
-
-    <footer class="text-muted bg-dark">
+<div>
+    <footer class="footer text-muted bg-dark">
         <div class="container">
-            <p class="float-right">
-                <a href="#">🔼 Back to top</a>
-            </p>
+
             <p>👹 AnimEstiam</p>
         </div>
     </footer>
-
-    <!-- //////////////////////////////////////////////////////////// -->
-    <!-- MODAL -->
-    <!-- //////////////////////////////////////////////////////////// -->
-    <div class="modal fade" id="modal-detail-anime">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- Element dynamique -->
-                    <h5 class="modal-title">🔥 Fate/Zero</h5>
-                    <a class="btn btn-link" title="Click to see trailer" target="_blank" href="https://www.youtube.com/embed/21-1-ioCfXY?enablejsapi=1&wmode=opaque&autoplay=1">🎥 Trailer</a>
-                    <!-- /Element dynamique -->
-                    
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-condensed table-striped">
-                        <tbody>
-                            <!-- Element dynamique -->
-                            <tr>
-                                <td>Source</td>
-                                <td>Light Novel</td>
-                            </tr>
-                            <tr>
-                                <td>Duration</td>
-                                <td>28 min per ep</td>
-                            </tr>
-                            <tr>
-                                <td>Genre</td>
-                                <td>
-                                    <span class="badge badge-info">Action</span>
-                                    <span class="badge badge-info">Supernatural</span>
-                                    <span class="badge badge-info">Magic</span>
-                                    <span class="badge badge-info">Fantasy</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Synopsis</td>
-                                <td>
-                                    With the promise of granting any wish, the omnipotent Holy Grail triggered three wars in the past, each too cruel and fierce to leave a victor. In spite of that, the wealthy Einzbern family is confident that the Fourth Holy Grail War will be different; namely, with a vessel of the Holy Grail now in their grasp. Solely for this reason, the much hated \"Magus Killer\" Kiritsugu Emiya is hired by the Einzberns, with marriage to their only daughter Irisviel as binding contract. Kiritsugu now stands at the center of a cutthroat game of survival, facing off against six other participants, each armed with an ancient familiar, and fueled by unique desires and ideals. Accompanied by his own familiar, Saber, the notorious mercenary soon finds his greatest opponent in Kirei Kotomine, a priest who seeks salvation from the emptiness within himself in pursuit of Kiritsugu. Based on the light novel written by Gen Urobuchi, Fate/Zero depicts the events of the Fourth Holy Grail War—10 years prior to Fate/stay night. Witness a battle royale in which no one is guaranteed to survive. [Written by MAL Rewrite]
-                                </td>
-                            </tr>
-                            <!-- /Element dynamique -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //////////////////////////////////////////////////////////// -->
-    <!-- /MODAL -->
-    <!-- //////////////////////////////////////////////////////////// -->
-
+</div>
     <!-- Attention à l'ordre de chargement quand vous ajoutez un script ! -->
     <script src="https://code.jquery.com/jquery-3.x-git.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/api/api.js"></script>
+    <script src="./scripts/api/searchBar.js"></script>
     <script src="./scripts/api/resource.js"></script>
     <script src="./scripts/api/animeResource.js"></script>
     <script src="./scripts/api/searchResource.js"></script>

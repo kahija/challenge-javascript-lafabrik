@@ -2,11 +2,11 @@ class LibraryApi {
     
     /**
      * @todo Instancier Axios
-     * @param {string} base_url
+     * @param {string} API_END_POINT
      * @see https://jikan.docs.apiary.io/#introduction/information
      * @see https://github.com/axios/axios
      */
-    constructor(base_url) {
+    constructor(API_END_POINT) {
         throw new Error("Not implemented")
     }
 
